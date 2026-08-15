@@ -238,33 +238,25 @@ footer p{color:#aaa;font-size:13px}
 <script>
 document.getElementById("bookingForm").addEventListener("submit", function(e) {
   e.preventDefault();
+  
+  const g = (id) => document.getElementById(id)?.value.trim() || "-";
 
-  const get = (id) => {
-    const el = document.getElementById(id);
-    return el ? el.value.trim() : "-";
-  };
+  const pesan = `🔔 *BOOKING AYAH FAREL TRANS*
 
-  const pesan =
-`🔔 BOOKING AYAH FAREL TRANS
+Nama: ${g("nama")}
+No WA: ${g("wa")}
+Layanan: ${g("layanan")}
+Tanggal: ${g("tanggal")}
+Jam: ${g("jam")}
+Jumlah: ${g("jumlah")}
+Asal: ${g("asal")}
+Tujuan: ${g("tujuan")}
+Alamat Jemput: ${g("jemput")}
+Alamat Tujuan: ${g("antar")}
+Catatan: ${g("catatan")}`;
 
-Nama: ${get("nama")}
-No. WhatsApp: ${get("wa")}
-Layanan: ${get("layanan")}
-Tanggal: ${get("tanggal")}
-Jam: ${get("jam")}
-Jumlah Penumpang: ${get("jumlah")}
-Asal: ${get("asal")}
-Tujuan: ${get("tujuan")}
-Alamat Jemput: ${get("jemput")}
-Alamat Tujuan: ${get("antar")}
-Catatan: ${get("catatan")}
-
-Mohon info ketersediaan dan tarifnya.
-Terima kasih.`;
-
-  const url = "https://wa.me/6287876273234?text=" + encodeURIComponent(pesan);
-
-  window.location.href = url;});
-</script>
+  window.location.href = `https://wa.me/6287876273234?text=${encodeURIComponent(pesan)}`;
+});
+  </script>
 </body>
 </html>

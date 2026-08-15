@@ -255,8 +255,9 @@ Alamat Jemput: ${g("jemput")}
 Alamat Tujuan: ${g("antar")}
 Catatan: ${g("catatan")}`;
 
-  window.location.href = `https://wa.me/6287876273234?text=${encodeURIComponent(pesan)}`;
-});
+  const url = "https://wa.me/6287876273234?text=" + encodeURIComponent(pesan);
+  window.open(url, "_blank");
+}
   </script>
 </body>
 </html>

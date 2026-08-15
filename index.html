@@ -236,27 +236,38 @@ footer p{color:#aaa;font-size:13px}
 <a class="wa" href="https://wa.me/6287876273234?text=Halo%20Ayah%20Farel%20Trans%2C%20saya%20ingin%20booking%20perjalanan." target="_blank" aria-label="WhatsApp">◉</a>
 
 <script>
-document.getElementById('bookingForm').addEventListener('submit', function(e){
+  <script>
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
   e.preventDefault();
-  const v = id => document.getElementById(id).value.trim();
-  const msg =
-`Halo Ayah Farel Trans, saya ingin booking perjalanan.
 
-Nama: ${v('nama')}
-No. WhatsApp: ${v('wa')}
-Layanan: ${v('layanan')}
-Tanggal: ${v('tanggal')}
-Jam: ${v('jam') || '-'}
-Jumlah penumpang: ${v('jumlah')}
-Asal: ${v('asal')}
-Tujuan: ${v('tujuan')}
-Alamat jemput: ${v('jemput') || '-'}
-Alamat tujuan: ${v('antar') || '-'}
-Catatan: ${v('catatan') || '-'}
+  const get = (id) => {
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : "-";
+  };
 
-Mohon info ketersediaan dan tarifnya. Terima kasih.`;
-  window.open('https://wa.me/6287876273234?text=' + encodeURIComponent(msg), '_blank');
+  const pesan =
+`🔔 BOOKING AYAH FAREL TRANS
+
+Nama: ${get("nama")}
+No. WhatsApp: ${get("wa")}
+Layanan: ${get("layanan")}
+Tanggal: ${get("tanggal")}
+Jam: ${get("jam")}
+Jumlah Penumpang: ${get("jumlah")}
+Asal: ${get("asal")}
+Tujuan: ${get("tujuan")}
+Alamat Jemput: ${get("jemput")}
+Alamat Tujuan: ${get("antar")}
+Catatan: ${get("catatan")}
+
+Mohon info ketersediaan dan tarifnya.
+Terima kasih.`;
+
+  const url = "https://wa.me/6287876273234?text=" + encodeURIComponent(pesan);
+
+  window.location.href = url;
 });
 </script>
+/script>
 </body>
 </html>

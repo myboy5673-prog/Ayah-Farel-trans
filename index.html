@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ayah Farel Trans - Travel, carter, rental mobil, drop bandara dan kirim paket. Booking via WhatsApp 087876273234.">
+<title>Ayah Farel Trans — Travel & Transport</title>
+<style>
+:root{
+  --red:#d71920; --red2:#b90f16; --dark:#161616; --muted:#6b7280;
+  --light:#fff7f7; --card:#ffffff; --line:#eee;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#171717;background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid #eee}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;color:var(--red);font-size:20px}
+.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+nav{display:flex;gap:24px;font-size:14px;font-weight:700}
+nav a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 19px;border-radius:12px;font-weight:800;border:0;cursor:pointer}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 8px 24px rgba(215,25,32,.22)}
+.btn-red:hover{background:var(--red2)}
+.btn-light{background:#fff;color:var(--red);border:1px solid #eee}
+.menu{display:none;font-size:28px;cursor:pointer}
+
+.hero{background:linear-gradient(135deg,#fff 0%,#fff5f5 55%,#ffe9e9 100%);padding:62px 0 55px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+.badge{display:inline-flex;background:#ffe1e1;color:var(--red);padding:7px 12px;border-radius:999px;font-weight:900;font-size:13px;margin-bottom:16px}
+h1{font-size:clamp(38px,6vw,66px);line-height:1.03;letter-spacing:-2px;margin-bottom:18px}
+h1 span{color:var(--red)}
+.hero p{font-size:18px;color:#555;max-width:600px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.hero-note{margin-top:15px;color:#777;font-size:13px}
+.hero-card{background:#fff;border-radius:28px;padding:12px;box-shadow:0 22px 60px rgba(0,0,0,.13);transform:rotate(1deg)}
+.hero-card img{width:100%;height:430px;object-fit:cover;border-radius:20px;display:block}
+
+.section{padding:70px 0}
+.section-head{text-align:center;margin-bottom:35px}
+.section-head h2{font-size:34px;letter-spacing:-1px}
+.section-head p{color:var(--muted);margin-top:7px}
+
+.services{background:#fafafa}
+.service-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.service{background:#fff;border:1px solid #eee;border-radius:20px;padding:22px 12px;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.04);transition:.2s}
+.service:hover{transform:translateY(-4px);border-color:#ffd0d0}
+.icon{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#ffe2e2;color:var(--red);font-size:25px;margin:0 auto 10px}
+.service h3{font-size:15px}
+.service p{font-size:12px;color:#777;margin-top:3px}
+
+.booking-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:start}
+.booking-info{background:var(--dark);color:#fff;border-radius:25px;padding:30px;position:sticky;top:100px}
+.booking-info h2{font-size:32px;line-height:1.15}
+.booking-info p{color:#ccc;margin:12px 0 22px}
+.contact-box{background:#262626;border:1px solid #383838;padding:15px;border-radius:15px}
+.contact-box small{display:block;color:#aaa}.contact-box strong{font-size:22px;color:#fff}
+.form-card{background:#fff;border:1px solid #eee;border-radius:25px;padding:28px;box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+label{font-size:13px;font-weight:800;margin-bottom:6px;display:block}
+input,select,textarea{width:100%;padding:13px 14px;border:1px solid #ddd;border-radius:11px;font:inherit;outline:none;background:#fff}
+input:focus,select:focus,textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(215,25,32,.08)}
+.full{grid-column:1/-1}
+textarea{min-height:95px;resize:vertical}
+.form-card .btn{width:100%;margin-top:16px;font-size:16px}
+.small{font-size:12px;color:#888;margin-top:8px;text-align:center}
+
+.routes{background:var(--light)}
+.route-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.route-card{background:#fff;border:1px solid #eee;border-radius:22px;padding:25px}
+.route-card h3{color:var(--red);margin-bottom:12px}
+.route-list{display:flex;flex-wrap:wrap;gap:8px}
+.route-list span{background:#f6f6f6;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700}
+
+.fleet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.fleet{background:#fff;border:1px solid #eee;border-radius:20px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.05)}
+.fleet img{width:100%;height:240px;object-fit:cover;display:block}
+.fleet div{padding:13px;font-weight:800}
+
+.trust{background:linear-gradient(135deg,var(--red),#8f0c11);color:#fff}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.trust-card{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);padding:24px;border-radius:20px}
+.trust-card strong{font-size:18px}.trust-card p{color:#ffeaea;margin-top:5px}
+
+footer{background:#111;color:#fff;padding:38px 0}
+.footer-grid{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+footer p{color:#aaa;font-size:13px}
+.wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:28px;box-shadow:0 12px 28px rgba(0,0,0,.25);z-index:60}
+
+@media(max-width:900px){
+  nav{display:none}.menu{display:block}
+  .hero-grid,.booking-wrap{grid-template-columns:1fr}
+  .hero-card{max-width:650px;margin:auto}
+  .booking-info{position:static}
+  .service-grid{grid-template-columns:repeat(3,1fr)}
+  .fleet-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .nav{height:66px}.brand{font-size:17px}.brand img{width:42px;height:42px}
+  .hero{padding-top:40px}.hero-card img{height:320px}
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .route-grid,.form-grid,.trust-grid{grid-template-columns:1fr}
+  .fleet-grid{grid-template-columns:1fr 1fr}
+  .fleet img{height:180px}
+  .section{padding:52px 0}
+  .hero-actions .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#beranda"><img src="assets/logo.jpg" alt="Logo Ayah Farel Trans"><span>Ayah Farel Trans</span></a>
+    <nav>
+      <a href="#beranda">Beranda</a><a href="#layanan">Layanan</a><a href="#booking">Booking</a>
+      <a href="#rute">Rute</a><a href="#armada">Armada</a><a href="#kontak">Kontak</a>
+    </nav>
+    <a class="btn btn-red" href="#booking">Booking</a>
+    <div class="menu">☰</div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="beranda">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">🚐 TRAVEL & TRANSPORT</div>
+      <h1>Perjalanan <span>Aman & Nyaman</span> Bersama Ayah Farel Trans</h1>
+      <p>Melayani perjalanan reguler, carter, rental mobil, drop bandara, hingga kirim paket dengan armada yang siap mengantar perjalanan Anda.</p>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="#booking">📅 Pesan Perjalanan</a>
+        <a class="btn btn-light" href="https://wa.me/6287876273234?text=Halo%20Ayah%20Farel%20Trans%2C%20saya%20ingin%20bertanya%20tentang%20perjalanan." target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="hero-note">Kontak & Booking: <strong>0878-7627-3234</strong></div>
+    </div>
+    <div class="hero-card">
+      <img src="assets/armada-3.jpg" alt="Armada Ayah Farel Trans">
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="layanan">
+  <div class="container">
+    <div class="section-head"><h2>Layanan Kami</h2><p>Pilih layanan yang sesuai kebutuhan perjalanan Anda.</p></div>
+    <div class="service-grid">
+      <div class="service"><div class="icon">🚌</div><h3>Travel Reguler</h3><p>Perjalanan antar kota</p></div>
+      <div class="service"><div class="icon">🔑</div><h3>Carter / Sewa</h3><p>Perjalanan rombongan</p></div>
+      <div class="service"><div class="icon">🚗</div><h3>Rental Mobil</h3><p>Mobil untuk kebutuhan Anda</p></div>
+      <div class="service"><div class="icon">✈️</div><h3>Drop Bandara</h3><p>Antar & jemput bandara</p></div>
+      <div class="service"><div class="icon">📦</div><h3>Kirim Paket</h3><p>Kirim paket antar kota</p></div>
+      <div class="service"><div class="icon">🗺️</div><h3>Paket Wisata</h3><p>Perjalanan wisata</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="booking">
+  <div class="container booking-wrap">
+    <div class="booking-info">
+      <div class="badge">BOOKING ONLINE</div>
+      <h2>Isi data perjalanan Anda.</h2>
+      <p>Setelah formulir dikirim, WhatsApp akan terbuka dengan data booking yang sudah terisi. Anda tinggal mengirimkannya ke admin.</p>
+      <div class="contact-box"><small>Kontak & Booking</small><strong>0878-7627-3234</strong></div>
+    </div>
+    <form class="form-card" id="bookingForm">
+      <div class="form-grid">
+        <div><label>Nama Lengkap</label><input id="nama" required placeholder="Nama Anda"></div>
+        <div><label>Nomor WhatsApp</label><input id="wa" required placeholder="08xxxxxxxxxx"></div>
+        <div><label>Tanggal Berangkat</label><input id="tanggal" type="date" required></div>
+        <div><label>Jumlah Penumpang</label><input id="jumlah" type="number" min="1" value="1" required></div>
+        <div><label>Kota / Lokasi Asal</label><input id="asal" required placeholder="Contoh: Lampung"></div>
+        <div><label>Kota / Lokasi Tujuan</label><input id="tujuan" required placeholder="Contoh: Jakarta"></div>
+        <div><label>Jam Keberangkatan</label><input id="jam" type="time"></div>
+        <div><label>Pilih Layanan</label>
+          <select id="layanan">
+            <option>Travel Reguler</option><option>Carter / Sewa</option><option>Rental Mobil</option>
+            <option>Drop Bandara</option><option>Kirim Paket</option><option>Paket Wisata</option>
+          </select>
+        </div>
+        <div class="full"><label>Alamat Penjemputan</label><input id="jemput" placeholder="Alamat lengkap penjemputan"></div>
+        <div class="full"><label>Alamat Tujuan</label><input id="antar" placeholder="Alamat lengkap tujuan"></div>
+        <div class="full"><label>Catatan Tambahan</label><textarea id="catatan" placeholder="Contoh: membawa barang banyak, titik jemput tertentu, dll."></textarea></div>
+      </div>
+      <button class="btn btn-red" type="submit">📲 Kirim Booking ke WhatsApp</button>
+      <div class="small">Data formulir tidak disimpan di website. Tombol akan membuka WhatsApp admin.</div>
+    </form>
+  </div>
+</section>
+
+<section class="section routes" id="rute">
+  <div class="container">
+    <div class="section-head"><h2>Rute Perjalanan</h2><p>Melayani perjalanan antar kota dan rute sesuai kebutuhan.</p></div>
+    <div class="route-grid">
+      <div class="route-card"><h3>📍 Sumatra</h3><div class="route-list">
+        <span>Lampung</span><span>Palembang</span><span>Jambi</span><span>Pekanbaru</span><span>Padang</span><span>Medan</span><span>Baturaja</span><span>Lubuklinggau</span><span>Bengkulu</span>
+      </div></div>
+      <div class="route-card"><h3>📍 Jawa & Bali</h3><div class="route-list">
+        <span>Jakarta</span><span>Jawa Barat</span><span>Jawa Tengah</span><span>Jawa Timur</span><span>Denpasar</span>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="armada">
+  <div class="container">
+    <div class="section-head"><h2>Armada Kami</h2><p>Foto armada asli Ayah Farel Trans.</p></div>
+    <div class="fleet-grid">
+      <div class="fleet"><img src="assets/armada-1.jpg" alt="Armada 1"><div>Armada Travel</div></div>
+      <div class="fleet"><img src="assets/armada-2.jpg" alt="Armada 2"><div>Armada Travel</div></div>
+      <div class="fleet"><img src="assets/armada-3.jpg" alt="Armada 3"><div>Armada Ayah Farel</div></div>
+      <div class="fleet"><img src="assets/armada-4.jpg" alt="Armada 4"><div>Armada Elf / Bus</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section trust">
+  <div class="container">
+    <div class="section-head"><h2>Kenapa Ayah Farel Trans?</h2><p style="color:#ffeaea">Kami mengutamakan kenyamanan dan pelayanan perjalanan.</p></div>
+    <div class="trust-grid">
+      <div class="trust-card"><strong>✓ Nyaman</strong><p>Perjalanan dibuat senyaman mungkin dari keberangkatan sampai tujuan.</p></div>
+      <div class="trust-card"><strong>✓ Praktis</strong><p>Booking perjalanan bisa dilakukan langsung melalui WhatsApp.</p></div>
+      <div class="trust-card"><strong>✓ Pilihan Layanan</strong><p>Travel reguler, carter, rental, drop bandara dan layanan lainnya.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="kontak">
+  <div class="container footer-grid">
+    <div><h2>AYAH FAREL TRANS</h2><p>Nyaman • Aman • Sampai Tujuan</p></div>
+    <div><p>Kontak & Booking</p><strong>0878-7627-3234</strong><p style="margin-top:7px">© 2026 Ayah Farel Trans</p></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/6287876273234?text=Halo%20Ayah%20Farel%20Trans%2C%20saya%20ingin%20booking%20perjalanan." target="_blank" aria-label="WhatsApp">◉</a>
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const msg =
+`Halo Ayah Farel Trans, saya ingin booking perjalanan.
+
+Nama: ${v('nama')}
+No. WhatsApp: ${v('wa')}
+Layanan: ${v('layanan')}
+Tanggal: ${v('tanggal')}
+Jam: ${v('jam') || '-'}
+Jumlah penumpang: ${v('jumlah')}
+Asal: ${v('asal')}
+Tujuan: ${v('tujuan')}
+Alamat jemput: ${v('jemput') || '-'}
+Alamat tujuan: ${v('antar') || '-'}
+Catatan: ${v('catatan') || '-'}
+
+Mohon info ketersediaan dan tarifnya. Terima kasih.`;
+  window.open('https://wa.me/6287876273234?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+</body>
+</html>
